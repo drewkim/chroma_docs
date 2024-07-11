@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chroma Docs</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+</head>
+<body>
+<div>
+  <h1 align="center"><b>Chroma Docs</b></h1>
+  <h4 align="center"><b>Ask anything about Chroma</b></h4>
+  <div class="window">
+    <div>
+      <div id="chatbox">
+        <p class="response">
+          <span>Hi! Ask me anything about Chroma.</span>
+        </p>
+      </div>
+      <div id="messageBox">
+        <input id="messageInput" type="text" name="msg" placeholder="Message" />
+      </div>
+    </div>
+      <script>
+        function getResponse() {
+          var queryText = $("#messageInput").val();
+          $("#messageInput").val("");
+          $("#chatbox").append('<p class="query"><span>' + queryText + "</span></p>");
+          
+          $.get("/query", { query: queryText }).done(function (response) {
+            $("#chatbox").append('<p class="response"><span>' + response + "</span></p>");
+          });
+        }
+
+        $("#messageInput").keypress(function (e) {
+          if (e.which == 13) {
+            getResponse();
+          }
+        });
+      </script>
+  </div>
+</div>
+</body>
+</html>

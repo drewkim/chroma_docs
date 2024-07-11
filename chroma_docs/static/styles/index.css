@@ -1,0 +1,46 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+#chatbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 60px;
+}
+#messageBox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 60px;
+}
+#messageInput {
+  width: 100%;
+  font-size: 18px;
+}
+.query {
+  color: white;
+  font-size: 18px;
+  text-align: right;
+}
+.query span {
+  background-color: #808080;
+  padding-right: 10px;
+}
+.response {
+  text-align: left;
+  font-size: 18px;
+}
+.response span {
+  background-color: #ffffff;
+  padding-left: 10px;
+}
+.window {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 60px;
+  border: 1px solid black;
+  background: #f7f7f7;
+}
